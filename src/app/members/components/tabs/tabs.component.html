@@ -1,0 +1,8 @@
+<p>tabs works!</p>
+<ul class="nav nav-tabs">
+
+  <li *ngFor="let tab of tabsNames; index as i" class="nav-item">
+    <a class="nav-link" routerLink="/navigator" [queryParams]="{tab:i}">{{ tab }}</a>
+  </li>
+
+</ul>
