@@ -1,6 +1,6 @@
 import { MembersData } from '../members/models/members'
 
-const membersData: MembersData = {
+export const membersData: MembersData = {
   total: 100,
   data: [
     {
