@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { FinancialType } from '../../models/members'
+import { tabsNames } from '../../../data/tabs'
 
 @Component({
   selector: 'ts-tabs',
@@ -9,9 +10,11 @@ import { FinancialType } from '../../models/members'
 export class TabsComponent implements OnInit {
   constructor() {}
 
-  tabsNames: FinancialType[] = ['income', 'outcome', 'loan', 'investment']
+  tabsNames: FinancialType[] = tabsNames
+  currentLink: number = 0
+  changeCurrent(i: number) {
+    this.currentLink = i
+  }
 
   ngOnInit(): void {}
 }
-
-//export type FinancialType = 'income' | 'outcome' | 'loan' | 'investment'
