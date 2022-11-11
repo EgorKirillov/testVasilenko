@@ -9,7 +9,11 @@ export class MembersService {
 
   members$ = new BehaviorSubject<Members[]>([])
   filteredMembers$ = new BehaviorSubject<Members[]>([])
+  filteredMembersLenght$ = new BehaviorSubject<number>(3)
 
+  get filteredMembersLenght() {
+    return this.filteredMembersLenght$.getValue()
+  }
   getMembers() {
     this.members$.next(membersData.data)
     console.log('get all members')
@@ -22,7 +26,21 @@ export class MembersService {
       .subscribe(value => this.filteredMembers$.next(value))
   }
 
-  getFilteredMembersCount(): number {
-    return this.filteredMembers$.getValue().length
+  getFilteredMembersCount(type: FinancialType) {
+    this.getMembers()
+    this.members$
+      .pipe(
+        map(members => {
+          return members.filter(m => m.type === type)
+        })
+      )
+      .subscribe(members => {
+        console.log(members)
+        this.filteredMembersLenght$.next(members.length)
+      })
+  }
+
+  getTotalCount() {
+    return membersData.total
   }
 }

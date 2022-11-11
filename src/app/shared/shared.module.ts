@@ -6,7 +6,7 @@ import { ListElementComponent } from './list-element/list-element.component'
 
 @NgModule({
   declarations: [TabsComponent, CardComponent, ListElementComponent],
-  exports: [TabsComponent],
+  exports: [TabsComponent, CardComponent],
   imports: [CommonModule],
 })
 export class SharedModule {}
