@@ -1,8 +1,8 @@
 import { Component } from '@angular/core'
-import { FinancialType } from '../../models/members'
 import { tabsNames } from '../../../data/tabs'
 import { ActivatedRoute } from '@angular/router'
 import { map, Observable } from 'rxjs'
+import { FinancialType } from '../../../shared/models/members'
 
 @Component({
   selector: 'ts-tabs',

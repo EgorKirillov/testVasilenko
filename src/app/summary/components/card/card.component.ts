@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core'
-import { FinancialType } from '../../models/members'
+import { FinancialType } from '../../../shared/models/members'
 
 @Component({
   selector: 'ts-card',

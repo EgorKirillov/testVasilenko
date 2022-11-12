@@ -1,4 +1,4 @@
-import { MembersData } from '../members/models/members'
+import { MembersData } from '../shared/models/members'
 
 export const membersData: MembersData = {
   total: 100,

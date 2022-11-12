@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { MembersService } from '../../../shared/services/members.service'
-import { FinancialType, Members } from '../../models/members'
+import { FinancialType, Members } from '../../../shared/models/members'
 import { tabsNames } from 'src/app/data/tabs'
 import { map, Observable } from 'rxjs'
 

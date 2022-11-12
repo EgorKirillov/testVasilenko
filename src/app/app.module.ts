@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { MembersModule } from './members/members.module'
+import { ListModule } from './list/list.module'
+import { SummaryModule } from './summary/summary.module'
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, MembersModule],
+  imports: [BrowserModule, AppRoutingModule, ListModule, SummaryModule],
   providers: [],
   bootstrap: [AppComponent],
 })

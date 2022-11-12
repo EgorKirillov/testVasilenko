@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { ActivatedRoute, Params } from '@angular/router'
 import { Observable, Subscription } from 'rxjs'
-import { Members } from '../../models/members'
+import { Members } from '../../../shared/models/members'
 import { MembersService } from '../../../shared/services/members.service'
 import { tabsNames } from '../../../data/tabs'
 

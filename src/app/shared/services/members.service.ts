@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { FinancialType, Members } from '../../members/models/members'
+import { FinancialType, Members } from '../models/members'
 import { BehaviorSubject, combineLatest, map } from 'rxjs'
 import { membersData } from '../../data/membersData'
 
