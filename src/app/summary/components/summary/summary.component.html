@@ -14,7 +14,7 @@
 
   <div class="row row-cols-5">
     <div class="col mb-4" *ngFor="let type of tabsNames; index as i">
-      <ts-card [type]="type" [index]="i" [count]="filteredMembersCounts[i] | async"></ts-card>
+      <ts-card [type]="type" [index]="i" [count]="filteredMembersCounts$[i] | async"></ts-card>
     </div>
   </div>
 

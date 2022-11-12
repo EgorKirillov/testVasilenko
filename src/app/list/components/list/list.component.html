@@ -1,5 +1,8 @@
 <div class="container">
+  <a class="btn btn-primary mb-1" routerLink="/" >go to summary</a>
+
   <ts-tabs></ts-tabs>
+
   <table class="table">
     <thead>
     <tr>
@@ -7,16 +10,18 @@
       <th scope="col">Acount</th>
     </tr>
     </thead>
+
     <tbody>
+
     <tr *ngFor="let member of members$ | async">
       <td>
-        {{member.name.first}}
-        {{member.name.last}}
+        {{member.name.first}}{{member.name.last}}
       </td>
       <td>
         {{member.amount}}
       </td>
     </tr>
+
     </tbody>
   </table>
 </div>

@@ -12,11 +12,11 @@ import { map, Observable } from 'rxjs'
 export class SummaryComponent {
   tabsNames: FinancialType[] = tabsNames
   members$: Observable<Members[]>
-  filteredMembersCounts: Observable<number>[]
+  filteredMembersCounts$: Observable<number>[]
 
   constructor(private membersService: MembersService) {
     this.members$ = this.membersService.members$
-    this.filteredMembersCounts = tabsNames.map(type => this.getFilteredMembersObservable(type))
+    this.filteredMembersCounts$ = tabsNames.map(type => this.getFilteredMembersObservable(type))
   }
 
   private getFilteredMembersObservable(type: FinancialType): Observable<number> {

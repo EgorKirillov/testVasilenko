@@ -11,7 +11,6 @@ import { FinancialType } from '../../../shared/models/members'
 })
 export class TabsComponent {
   tabsNames: FinancialType[] = tabsNames
-  currentLink: number = 0
   currentTabIndex: Observable<string>
 
   constructor(private route: ActivatedRoute) {

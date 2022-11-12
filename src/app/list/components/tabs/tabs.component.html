@@ -1,9 +1,11 @@
 <ul *ngIf="currentTabIndex | async as tabIndex" class="nav nav-tabs">
   <li *ngFor="let tab of tabsNames; index as i" class="nav-item">
+
     <a
       class="nav-link active"
       [class.tabs__tab_active]="tabIndex===i.toString()"
       routerLink="/navigator" [queryParams]="{tab:i}"
     >{{ tab }}</a>
+
   </li>
 </ul>
