@@ -8,9 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint --fix",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "lint": "ng lint --fix"
   },
   "private": true,
   "dependencies": {
