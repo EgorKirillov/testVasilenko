@@ -4,7 +4,7 @@ import { ListComponent } from './components/list/list.component'
 import { SummaryComponent } from './components/summary/summary.component'
 import { TabsComponent } from './components/tabs/tabs.component'
 import { RouterModule } from '@angular/router'
-import { MembersService } from './services/members.service';
+import { MembersService } from '../shared/services/members.service'
 import { CardComponent } from './components/card/card.component'
 
 @NgModule({
