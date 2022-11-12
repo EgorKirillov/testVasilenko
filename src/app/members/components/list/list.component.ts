@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnDestroy, OnInit } from '@angular/core'
 import { ActivatedRoute, Params } from '@angular/router'
-import { Observable } from 'rxjs'
-import { FinancialType, Members } from '../../models/members'
-import { MembersService } from '../../services/members.service'
+import { Observable, Subscription } from 'rxjs'
+import { Members } from '../../models/members'
+import { MembersService } from '../../../shared/services/members.service'
 import { tabsNames } from '../../../data/tabs'
 
 @Component({
@@ -10,19 +10,19 @@ import { tabsNames } from '../../../data/tabs'
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss'],
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnInit, OnDestroy {
   constructor(private route: ActivatedRoute, private membersService: MembersService) {}
-  queryParam: Params | undefined
 
+  queryParamSubscr!: Subscription
   members$!: Observable<Members[]>
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe((param: Params) => {
-      let sortByType: FinancialType = 'income'
-      this.queryParam = param
-      sortByType = tabsNames[param['tab']]
-      this.membersService.getFilteredMembers(sortByType)
+    this.queryParamSubscr = this.route.queryParams.subscribe((param: Params) => {
+      this.membersService.setFinancialType(tabsNames[param['tab']])
     })
     this.members$ = this.membersService.filteredMembers$
+  }
+  ngOnDestroy() {
+    this.queryParamSubscr.unsubscribe()
   }
 }
