@@ -5,7 +5,7 @@ import { ListComponent } from './members/components/list/list.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found/page-not-found.component'
 
 const routes: Routes = [
-  { path: '', component: SummaryComponent },
+  { path: '', component: SummaryComponent, pathMatch: 'full' },
   { path: 'navigator', component: ListComponent },
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '/404' },
