@@ -5,10 +5,11 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { ListModule } from './list/list.module'
 import { SummaryModule } from './summary/summary.module'
+import { PageNotFoundModule } from './page-not-found/page-not-found.module'
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, ListModule, SummaryModule],
+  imports: [BrowserModule, AppRoutingModule, ListModule, SummaryModule, PageNotFoundModule],
   providers: [],
   bootstrap: [AppComponent],
 })
